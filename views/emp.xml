@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+            <record id="employee_tree_form" model="ir.ui.view">
+            <field name="name">employee.tree</field>
+            <field name="model">employee</field>
+            <field name="arch" type="xml">
+                <group>
+                    <tree>
+                    <field name="id_number" />
+                    <field name="name" />
+                    <field name="surname" />
+                    <field name="age" />
+                    <field name="city" />
+                    <field name="gender" />
+                    <field name="birthdate" />
+                    <field name="date_of_card_creation" />
+                    <field name="card_validity_period" />
+                    <field name="card_number" />
+                    <field name="birth_place" />
+                    <field name="card_issuing_organisation" />
+                    <field name="signature" />
+                </tree>
+                </group>
+            </field>
+    </record>
+
+    <record id="employee_form" model="ir.ui.view">
+            <field name="name">employee.form</field>
+            <field name="model">employee</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="id_number" />
+                    <field name="name" />
+                    <field name="surname" />
+                    <field name="age" />
+                    <field name="city" />
+                    <field name="gender" />
+                    <field name="birthdate" />
+                    <field name="date_of_card_creation" />
+                    <field name="card_validity_period" />
+                    <field name="card_number" />
+                    <field name="birth_place" />
+                    <field name="card_issuing_organisation" />
+                    <field name="signature" />
+                    </group>
+                </form>
+            </field>
+    </record>
+<!--<record id="action_employee" model="ir.actions.act_window">-->
+<!--        <field name="name">Swissemployee</field>-->
+<!--        <field name="description">act</field>-->
+<!--        <field name="res_model">employee</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--        <field name="help" type="html">-->
+<!--            <p class="o_view_nocontent_smiling_face">-->
+<!--                Create characteristics!-->
+<!--            </p>-->
+<!--        </field>-->
+<!--    </record>-->
+    <record id="action_employee" model="ir.actions.act_window">
+            <field name="name">Swissemployee</field>
+            <field name="res_model">employee</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('employee_tree_form')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('employee_form')})]"/>
+    </record>
+
+<!--    <menuitem id="swisscapital_root" name="Swisscapital" sequance="0"/>-->
+    <menuitem id="swisscapital_emp" name="Swisscapitalemp"   action="action_employee"/>
+
+    </data>
+
+</odoo>
