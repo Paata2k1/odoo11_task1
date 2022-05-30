@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+    <record id="action_department" model="ir.actions.act_window">
+            <field name="name">Swissdepartment</field>
+            <field name="res_model">department</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+    </record>
+
+    <menuitem id="swisscapital_department" name="Swisscapitaldepartment"   action="action_department"/>
+
+    </data>
+
+</odoo>
