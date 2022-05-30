@@ -15,10 +15,12 @@
     'data': [
         'security/ir.model.access.csv',
         'views/emp.xml',
+        'views/department.xml',
 
     ],
 
     'description': """1234567""",
     'installable': True,
+    'application': True,
 
 }

@@ -6,7 +6,6 @@
             <field name="model">employee</field>
             <field name="arch" type="xml">
                 <group>
-                    <tree>
                     <field name="id_number" />
                     <field name="name" />
                     <field name="surname" />
@@ -14,14 +13,18 @@
                     <field name="city" />
                     <field name="gender" />
                     <field name="birthdate" />
-                    <field name="date_of_card_creation" />
+<!--                </group>-->
+<!--            <group>-->
+                <field name="date_of_card_creation" />
                     <field name="card_validity_period" />
                     <field name="card_number" />
                     <field name="birth_place" />
                     <field name="card_issuing_organisation" />
                     <field name="signature" />
-                </tree>
-                </group>
+                    <field name="fullname" />
+                    <field name="department" />
+            </group>
+
             </field>
     </record>
 
@@ -38,13 +41,19 @@
                     <field name="city" />
                     <field name="gender" />
                     <field name="birthdate" />
-                    <field name="date_of_card_creation" />
+                    </group>
+                    <group>
+                        <field name="date_of_card_creation" />
                     <field name="card_validity_period" />
                     <field name="card_number" />
                     <field name="birth_place" />
                     <field name="card_issuing_organisation" />
                     <field name="signature" />
+                        <field name="fullname" />
+                        <field name="department" />
+
                     </group>
+
                 </form>
             </field>
     </record>
