@@ -33,6 +33,10 @@
             <field name="model">employee</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+                        <button name="%(SwissCapital.create_comment_wizard)d" string="Create comment" type="action" class="oe_highlight"
+                                context="{ 'default_employee_id': active_id }" />
+                    </header>
                     <group>
                         <field name="id_number" />
                     <field name="name" />
@@ -52,6 +56,9 @@
                         <field name="fullname" />
                         <field name="department" />
 
+                    </group>
+                    <group>
+                        <field name="comment" readonly="1"/>
                     </group>
 
                 </form>

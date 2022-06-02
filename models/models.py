@@ -22,6 +22,7 @@ class Employee(models.Model):
     signature = fields.Binary(string='Signature image')
     fullname = fields.Char(String='Fullname', compute='compute_fullname')
     department = fields.Many2one('department', string='Department')
+    comment = fields.Text(string="Comment")
 
     _sql_constraints = [
         ('id_unique', 'unique (id_number)', 'id number must be unique'),
@@ -61,8 +62,8 @@ class Employee(models.Model):
                 print(rec.birthdate)
                 birthdate = datetime.strptime(str(rec.birthdate), '%Y-%m-%d').date()
                 rec.age = str(int((today - birthdate).days / 365))
-            else:
-                age = rec.age
+            # else:
+            #     age = rec.age
 
     @api.multi
     def compute_fullname(self):
@@ -74,7 +75,12 @@ class Employee(models.Model):
     def check_id(self):
         for rec in self:
             print(rec.id_number)
-            if len(rec.id_number) == 11:
-                pass
-            else:
+            if len(rec.id_number) != 11:
                 raise ValidationError(('ჩანაწერი არ ემთხვევა პირადი ნომრის ფორმატს'))
+
+    @api.model
+    def create(self, vals):
+        if vals.get('name', ('New')) == ('New'):
+            vals['name'] = self.env['ir.sequence'].next_by_code('employee') or ('New')
+        result = super(Employee, self).create(vals)
+        return result

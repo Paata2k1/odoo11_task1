@@ -14,6 +14,7 @@
     ],
     'data': [
         'security/ir.model.access.csv',
+        'wizards/create_comment.xml',
         'views/emp.xml',
         'views/department.xml',
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+        <record id="create_comment_form" model="ir.ui.view">
+        <field name="name">create.comment.wizard</field>
+        <field name="model">create.comment</field>
+       <field name="arch" type="xml">
+            <form string="create comment">
+                <group>
+                    <field name="employee_id"/>
+                    <field name="comment"/>
+                </group>
+                 <footer>
+                     <button name="create_comment" string="Create" type="object" class="btn-primary"/>
+                     <button string="Cancel" class="btn-secondary" special="cancel"/>
+                 </footer>
+            </form>
+       </field>
+      </record>
+
+
+        <record id="create_comment_wizard" model="ir.actions.act_window">
+    <field name="name">create comment</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">create.comment</field>
+    <field name="view mode">form</field>
+    <field name="view_id" ref="create_comment_form"/>
+    <field name="target">new</field>
+        </record>
+
+</odoo>
