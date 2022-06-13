@@ -50,18 +50,19 @@ class Employee(models.Model):
         today = date.today()
         employees = self.env['employee'].search([])
         # print('employees', self.dbase)
+        s = smtplib.SMTP('smtp.gmail.com', 587)
+        s.starttls()
+        s.login("kharashvili20@gmail.com", 'yphfpmjbseoppwpy')
         for rec in employees:
             print(rec.birthdate, rec.email_id)
 
             today = datetime.today()
             birthdate = datetime.strptime(rec.birthdate, '%Y-%m-%d').date()
             print(today.month, today.day)
-            s = smtplib.SMTP('smtp.gmail.com', 587)
-            s.starttls()
-            s.login(rec.email_sup, 'yphfpmjbseoppwpy')
             if today.month == birthdate.month and today.day == birthdate.day:
                 print("shemovida")
                 msg = 'happybday'
+
                 s.sendmail(rec.email_sup, rec.email_id, msg)
                 print(rec.email_id)
 
