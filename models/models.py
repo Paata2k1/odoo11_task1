@@ -37,6 +37,7 @@ class Employee(models.Model):
     department = fields.Many2one('department', string='Department')
     email_id = fields.Char(string='Email')
     comment = fields.Text(string="Comment")
+    email_sup = fields.Char(string='Email of supervisor')
 
     _sql_constraints = [
         ('id_unique', 'unique (id_number)', 'id number must be unique'),
@@ -52,16 +53,17 @@ class Employee(models.Model):
         for rec in employees:
             print(rec.birthdate, rec.email_id)
 
-        today = datetime.today()
-        birthdate = datetime.strptime(rec.birthdate, '%Y-%m-%d').date()
-        x = birthdate
-        print(today.month, today.day)
-        if today.month == x.month and today.day == x.day:
-            msg = 'happybday'
+            today = datetime.today()
+            birthdate = datetime.strptime(rec.birthdate, '%Y-%m-%d').date()
+            print(today.month, today.day)
             s = smtplib.SMTP('smtp.gmail.com', 587)
             s.starttls()
-            s.login('kharashvili20@gmail.com', 'gmailapp_password')
-            s.sendmail('kharashvili20@gmail.com', rec.email_id, msg)
+            s.login(rec.email_sup, 'yphfpmjbseoppwpy')
+            if today.month == birthdate.month and today.day == birthdate.day:
+                print("shemovida")
+                msg = 'happybday'
+                s.sendmail(rec.email_sup, rec.email_id, msg)
+                print(rec.email_id)
 
     @api.constrains('birthdate')
     def check_age(self):
@@ -128,4 +130,3 @@ class Employee(models.Model):
     #     rows = self.env.cr.execute(query)
     #     print(rows)
     #     # cur.close()
-

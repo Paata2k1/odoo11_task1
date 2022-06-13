@@ -23,6 +23,7 @@
                     <field name="signature" />
                     <field name="fullname" />
                     <field name="department" />
+                    <field name="email_sup" />
             </group>
 
             </field>
@@ -56,6 +57,7 @@
                         <field name="fullname" />
                         <field name="department" />
                         <field name="email_id" />
+                        <field name="email_sup" />
 
                     </group>
                     <group>
