@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="report_employee">
+    <t t-foreach="docs" t-as="o">
+      <t t-call="web.basic_layout">
+        <div class="page">
+          <div class="oe_structure" />
+          <div class="row">
+            <div class="col-xs-8">
+              <table class="table table-condensed" style="border: 3px solid black ">
+                <tr>
+                  <td width="60%">
+                    <table>
+                      <tr>
+                        <td>
+                          <span>
+                            <strong>ID number</strong>
+                          </span>
+                        </td>
+                        <td>
+                          <span>:</span>
+                        </td>
+                        <td>
+                          <span t-field="o.id_number" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>
+                            <strong>Name</strong>
+                          </span>
+                        </td>
+                        <td>
+                          <span>:</span>
+                        </td>
+                        <td colspan="3" class="text-center">
+                          <span t-field="o.name" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>
+                            <strong>Surname</strong>
+                          </span>
+                        </td>
+                        <td>
+                          <span>:</span>
+                        </td>
+                        <td>
+                          <span t-field="o.surname" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>
+                            <strong>Age</strong>
+                          </span>
+                        </td>
+                        <td>
+                          <span>:</span>
+                        </td>
+                        <td>
+                          <span t-field="o.age" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>
+                            <strong>City</strong>
+                          </span>
+                        </td>
+                        <td>
+                          <span>:</span>
+                        </td>
+                        <td>
+                          <span t-field="o.city" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>
+                            <strong>Gender</strong>
+                          </span>
+                        </td>
+                        <td>
+                          <span>:</span>
+                        </td>
+                        <td>
+                          <span t-field="o.gender" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>
+                            <strong>Birthdate</strong>
+                          </span>
+                        </td>
+                        <td>
+                          <span>:</span>
+                        </td>
+                        <td>
+                          <span t-field="o.birthdate" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>
+                            <strong>Date of card creation</strong>
+                          </span>
+                        </td>
+                        <td>
+                          <span>:</span>
+                        </td>
+                        <td>
+                          <span t-field="o.date_of_card_creation" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>
+                            <strong>Card validity period</strong>
+                          </span>
+                        </td>
+                        <td>
+                          <span>:</span>
+                        </td>
+                        <td>
+                          <span t-field="o.card_validity_period" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>
+                            <strong>Card number</strong>
+                          </span>
+                        </td>
+                        <td>
+                          <span>:</span>
+                        </td>
+                        <td>
+                          <span t-field="o.card_number" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>
+                            <strong>Birthplace</strong>
+                          </span>
+                        </td>
+                        <td>
+                          <span>:</span>
+                        </td>
+                        <td>
+                          <span t-field="o.birth_place" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>
+                            <strong>Fullname</strong>
+                          </span>
+                        </td>
+                        <td>
+                          <span>:</span>
+                        </td>
+                        <td>
+                          <span t-field="o.fullname" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>
+                            <strong>Department</strong>
+                          </span>
+                        </td>
+                        <td>
+                          <span>:</span>
+                        </td>
+                        <td>
+                          <span t-field="o.department" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>
+                            <strong>Email</strong>
+                          </span>
+                        </td>
+                        <td>
+                          <span>:</span>
+                        </td>
+                        <td>
+                          <span t-field="o.email_id" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>
+                            <strong>Salary</strong>
+                          </span>
+                        </td>
+                        <td>
+                          <span>:</span>
+                        </td>
+                        <td>
+                          <span t-field="o.salary" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>
+                            <strong>Email of supervisor</strong>
+                          </span>
+                        </td>
+                        <td>
+                          <span>:</span>
+                        </td>
+                        <td>
+                          <span t-field="o.email_sup" />
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </t>
+    </t>
+  </template>
+</odoo>

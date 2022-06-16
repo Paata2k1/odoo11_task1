@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="report_employee_info"
+        string="Employee info"
+        model="employee"
+        report_type="qweb-pdf"
+        name="SwissCapital.report_employee"
+        file="SwissCapital.report_employee"/>
+
+
+
+
+</odoo>

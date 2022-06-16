@@ -18,6 +18,8 @@
         'views/department.xml',
         'data/cron.xml',
         'views/emp.xml',
+        'reports/report.xml',
+        'reports/employee_info.xml',
         'security/ir.model.access.csv',
 
     ],
