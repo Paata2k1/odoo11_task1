@@ -13,10 +13,12 @@
 
     ],
     'data': [
-        'security/ir.model.access.csv',
+        'security/security.xml',
         'wizards/create_comment.xml',
-        'views/emp.xml',
         'views/department.xml',
+        'data/cron.xml',
+        'views/emp.xml',
+        'security/ir.model.access.csv',
 
     ],
 

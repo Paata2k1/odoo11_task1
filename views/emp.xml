@@ -5,7 +5,7 @@
             <field name="name">employee.tree</field>
             <field name="model">employee</field>
             <field name="arch" type="xml">
-                <group>
+            <tree>
                     <field name="id_number" />
                     <field name="name" />
                     <field name="surname" />
@@ -13,9 +13,7 @@
                     <field name="city" />
                     <field name="gender" />
                     <field name="birthdate" />
-<!--                </group>-->
-<!--            <group>-->
-                <field name="date_of_card_creation" />
+                    <field name="date_of_card_creation" />
                     <field name="card_validity_period" />
                     <field name="card_number" />
                     <field name="birth_place" />
@@ -24,8 +22,8 @@
                     <field name="fullname" />
                     <field name="department" />
                     <field name="email_sup" />
-            </group>
 
+             </tree>
             </field>
     </record>
 
@@ -39,45 +37,36 @@
                                 context="{ 'default_employee_id': active_id }" />
                     </header>
                     <group>
-                        <field name="id_number" />
-                    <field name="name" />
-                    <field name="surname" />
-                    <field name="age" />
-                    <field name="city" />
-                    <field name="gender" />
-                    <field name="birthdate" />
+                        <field name="id_number" groups="SwissCapital.group_employee_hr" />
+                    <field name="name" groups="SwissCapital.group_employee_hr"  />
+                    <field name="surname" groups="SwissCapital.group_employee_hr" />
+                    <field name="age" groups="SwissCapital.group_employee_hr" />
+                    <field name="city" groups="SwissCapital.group_employee_hr" />
+                    <field name="gender" groups="SwissCapital.group_employee_hr" />
+                    <field name="birthdate" groups="SwissCapital.group_employee_hr" />
                     </group>
                     <group>
-                        <field name="date_of_card_creation" />
-                    <field name="card_validity_period" />
-                    <field name="card_number" />
-                    <field name="birth_place" />
-                    <field name="card_issuing_organisation" />
-                    <field name="signature" />
-                        <field name="fullname" />
-                        <field name="department" />
-                        <field name="email_id" />
-                        <field name="email_sup" />
+                        <field name="date_of_card_creation" groups="SwissCapital.group_employee_hr" />
+                    <field name="card_validity_period" groups="SwissCapital.group_employee_hr" />
+                    <field name="card_number" groups="SwissCapital.group_employee_hr" />
+                    <field name="birth_place" groups="SwissCapital.group_employee_hr" />
+                    <field name="card_issuing_organisation" groups="SwissCapital.group_employee_hr" />
+                    <field name="signature" groups="SwissCapital.group_employee_hr" />
+                        <field name="fullname" groups="SwissCapital.group_employee_hr" />
+                        <field name="department" groups="SwissCapital.group_employee_hr" />
+                        <field name="email_id" groups="SwissCapital.group_employee_hr" />
+                        <field name="salary" groups="SwissCapital.group_employee_Accountant" />
+                        <field name="email_sup" groups="SwissCapital.group_employee_hr" />
 
                     </group>
                     <group>
-                        <field name="comment" readonly="1"/>
+                        <field name="comment" readonly="1" groups="SwissCapital.group_employee_hr"  />
                     </group>
 
                 </form>
             </field>
     </record>
-<!--<record id="action_employee" model="ir.actions.act_window">-->
-<!--        <field name="name">Swissemployee</field>-->
-<!--        <field name="description">act</field>-->
-<!--        <field name="res_model">employee</field>-->
-<!--        <field name="view_mode">tree,form</field>-->
-<!--        <field name="help" type="html">-->
-<!--            <p class="o_view_nocontent_smiling_face">-->
-<!--                Create characteristics!-->
-<!--            </p>-->
-<!--        </field>-->
-<!--    </record>-->
+
     <record id="action_employee" model="ir.actions.act_window">
             <field name="name">Swissemployee</field>
             <field name="res_model">employee</field>
