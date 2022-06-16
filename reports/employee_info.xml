@@ -154,6 +154,19 @@
                           <span t-field="o.birth_place" />
                         </td>
                       </tr>
+                        <tr>
+                        <td>
+                          <span>
+                            <strong>Card issuing organization</strong>
+                          </span>
+                        </td>
+                        <td>
+                          <span>:</span>
+                        </td>
+                        <td>
+                          <span t-field="o.card_issuing_organisation" />
+                        </td>
+                      </tr>
                       <tr>
                         <td>
                           <span>
